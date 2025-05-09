@@ -18,9 +18,10 @@ function guardarTareasLocalStorage(tareas) {
 function mostrarTareas() { 
     listaTarea.innerHTML = "";
     const tareas = obtenerTareasLocalStorage();
-    let estilo = ""
+    
 
-    tareas.forEach((tarea, index) => {
+    tareas.forEach((tarea, index) => { 
+        let estilo = ""
         if (tarea.completada == true) {
             estilo = "completada"
         }
@@ -28,7 +29,6 @@ function mostrarTareas() {
         console.log(tarea.completada)
      let html = `<div class="tarea">
      <p class="texto-tarea ${estilo}">${tarea.texto}</p>
-     ${index}
      <div class="botones-tarea">
        <button onclick = "completarTarea(${index})" class="btn_ok">✔️</button>
        <button onclick = "eliminarTarea(${index})" class="btn_eliminar">❌</button>
